@@ -8,6 +8,7 @@ import cors from "cors";
 import categoryRoutes from './routes/categoryRoutes.js'
 import productRoutes from './routes/productRoutes.js';
 import path from "path";
+import {fileURLToPath} from 'url';
 dotenv.config();
 //env file is present in main file so it is not present in any sub file so there is nood to specify the path of dotenv file if it is in subfolder or file then thre is need of specifying path
 //dotenv.config({path:''})
@@ -17,6 +18,8 @@ connectDB();
 
 
 //rest  object
+const __filename =fileURLToPath(import.meta.url);
+const __dirname=path.dirname(__filename);
 const app=express();
 
 //middlewares
